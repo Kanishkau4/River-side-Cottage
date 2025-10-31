@@ -62,7 +62,7 @@ function createBooking($check_in, $check_out, $room_id, $guests, $first_name, $l
 function sendConfirmationEmail($email, $first_name, $last_name, $booking_id, $room, $check_in, $check_out, $guests, $total_price, $special_requests) {
     // Email configuration
     $to = $email;
-    $subject = "Booking Confirmation - LuxeVista Resort";
+    $subject = "Booking Confirmation - River side Cottage";
     
     // Email body
     $message = "
@@ -71,9 +71,8 @@ function sendConfirmationEmail($email, $first_name, $last_name, $booking_id, $ro
         <title>Booking Confirmation</title>
     </head>
     <body>
-        <h2>Booking Confirmation - LuxeVista Resort</h2>
-        <p>Dear $first_name $last_name,</p>
-        <p>Thank you for booking with LuxeVista Resort. Your reservation details are as follows:</p>
+        <h2>Booking Confirmation - River side Cottage</h2>
+        <p>Thank you for booking with River side Cottage. Your reservation details are as follows:</p>
         
         <table border='1' cellpadding='10'>
             <tr>
@@ -111,9 +110,9 @@ function sendConfirmationEmail($email, $first_name, $last_name, $booking_id, $ro
     }
         
     $message .= "
-        <p>We look forward to welcoming you to LuxeVista Resort!</p>
+        <p>We look forward to welcoming you to River side Cottage!</p>
         <p>Best regards,<br/>
-        The LuxeVista Resort Team</p>
+        The River side Cottage Team</p>
     </body>
     </html>
     ";
@@ -121,7 +120,7 @@ function sendConfirmationEmail($email, $first_name, $last_name, $booking_id, $ro
     // Headers
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= "From: LuxeVista Resort <noreply@luxevistaresort.com>" . "\r\n";
+    $headers .= "From: River side Cottage <noreply@riversidecottage.com>" . "\r\n";
     
     // Send email
     mail($to, $subject, $message, $headers);

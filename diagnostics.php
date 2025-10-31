@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LuxeVista Resort - System Diagnostics</title>
+    <title>River side Cottage - System Diagnostics</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -167,7 +167,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> LuxeVista Resort</p>
+                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> River side Cottage</p>
                 </div>
             </div>
         </div>

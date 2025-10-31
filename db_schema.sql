@@ -1,4 +1,4 @@
--- MySQL Database Schema for LuxeVista Resort Booking System
+-- MySQL Database Schema for River side Cottage Booking System
 
 -- Create database
 CREATE DATABASE IF NOT EXISTS luxevista_resort;

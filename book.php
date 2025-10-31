@@ -4,6 +4,9 @@ require_once 'includes/booking_handler.php';
 
 // Get room type ID from URL parameter
 $room_type_id = isset($_GET['room_type']) ? (int)$_GET['room_type'] : 0;
+$guests = isset($_GET['guests']) ? (int)$_GET['guests'] : 0;
+$check_in = isset($_GET['check_in']) ? $_GET['check_in'] : '';
+$check_out = isset($_GET['check_out']) ? $_GET['check_out'] : '';
 
 // Check if form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -35,17 +38,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         $booking_error = "Please fill in all required fields.";
     }
-} else {
-    // Pre-populate check-in/check-out dates if provided in URL
-    $check_in = $_GET['check_in'] ?? '';
-    $check_out = $_GET['check_out'] ?? '';
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>LuxeVista Resort - Booking</title>
+    <title>River side Cottage - Booking</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -229,8 +228,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <label for="guests">Number of Guests *</label>
                     <select name="guests" class="form-control" required>
                       <option value="">Select Number of Guests</option>
-                      <option value="1">1 Guest</option>
-                      <option value="2">2 Guests</option>
+                      <option value="1" <?php echo ($guests == 1) ? 'selected' : ''; ?>>1 Guest</option>
+                      <option value="2" <?php echo ($guests == 2) ? 'selected' : ''; ?>>2 Guests</option>
                     </select>
                   </div>
                   
@@ -271,16 +270,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="container">
         <div class="row mb-5">
           <div class="col-md">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">LuxeVista Resort</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
+                <div class="ftco-footer-widget mb-4">
+                  <h2 class="ftco-heading-2">River side Cottage</h2>
+                  <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                  <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                    <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                    <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                  </ul>
+                </div>
+              </div>
           <div class="col-md">
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">Useful Links</h2>
@@ -307,9 +306,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             	<h2 class="ftco-heading-2">Have a Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@luxevistaresort.com</span></a></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Poramadilla, Pelwatta</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">0771313951 WhatsApp, 0771313951 normal, 0717999566 normal</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@riversidecottage.com</span></a></li>
 	              </ul>
 	            </div>
             </div>

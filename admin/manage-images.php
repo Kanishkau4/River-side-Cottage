@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['upload_image'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage Room Images - LuxeVista Resort</title>
+    <title>Manage Room Images - River side Cottage</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <style>
@@ -180,7 +180,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['upload_image'])) {
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> LuxeVista Resort</p>
+                    <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> River side Cottage</p>
                 </div>
             </div>
         </div>

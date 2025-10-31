@@ -9011,7 +9011,10 @@ h1, h2, h3, h4, h5,
       color: #000000; }
 
 .resto-img {
-  height: 500px; }
+  height: 500px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center; }
 
 .ftco-social {
   padding: 0; }
@@ -9653,6 +9656,15 @@ textarea.form-control {
   height: 250px;
   position: relative;
   display: block; }
+
+.resto-img {
+  height: 500px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.ftco-social {
 
 @media (min-width: 768px) {
   .blog-entry {

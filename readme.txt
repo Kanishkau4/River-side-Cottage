@@ -1,8 +1,5 @@
-Thank you for using our template!
+River side Cottage - Luxury Hotel Booking System
 
-For more awesome templates please visit https://colorlib.com/wp/templates/
+This is a custom hotel booking website developed for River side Cottage.
 
-Copyright information for the template can't be altered/removed unless you purchase a license.
-More information about the license is available here: https://colorlib.com/wp/licence/
-
-Removing copyright information without the license will result in suspension of your hosting and/or domain name(s).
+Copyright (c) 2025 River side Cottage. All rights reserved.

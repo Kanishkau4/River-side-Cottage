@@ -1,9 +1,20 @@
 <?php
-// Simple admin page for managing room images
-// Note: This is a basic example without authentication for demonstration purposes
-
+session_start();
 require_once '../includes/db_connect.php';
 require_once '../includes/booking_handler.php';
+
+// Check if admin is logged in
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    header('Location: login.php');
+    exit();
+}
+
+// Handle logout
+if (isset($_GET['logout'])) {
+    session_destroy();
+    header('Location: login.php');
+    exit();
+}
 
 // Create admin directory if it doesn't exist
 if (!is_dir('admin')) {
@@ -91,6 +102,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['upload_image'])) {
             object-fit: cover;
             border-radius: 5px;
         }
+        .btn {
+            display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: 0.375rem 0.75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        .btn-primary {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            color: #fff;
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+        .btn-secondary {
+            color: #fff;
+            background-color: #6c757d;
+            border-color: #6c757d;
+        }
+        .btn-secondary:hover {
+            color: #fff;
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
     </style>
 </head>
 <body>
@@ -101,6 +146,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['upload_image'])) {
     </nav>
 
     <div class="admin-container">
+        <div class="admin-header">
+            <h1>Manage Room Images</h1>
+            <div>
+                Welcome, <?php echo htmlspecialchars($_SESSION['admin_username']); ?>! 
+                <a href="?logout=1" class="logout-btn">Logout</a>
+            </div>
+        </div>
+        
+        <!-- Admin Navigation -->
+        <div class="admin-section">
+            <div class="section-content" style="padding: 10px;">
+                <a href="index.php" class="btn btn-primary" style="margin-right: 10px;">View Bookings & Users</a>
+                <a href="manage-images.php" class="btn btn-secondary">Manage Room Images</a>
+            </div>
+        </div>
+        
         <h1 class="text-center mb-4">Manage Room Images</h1>
         
         <?php if ($upload_message): ?>

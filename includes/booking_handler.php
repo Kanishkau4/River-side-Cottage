@@ -10,6 +10,43 @@ function createBooking($check_in, $check_out, $room_id, $guests, $first_name, $l
     }
     
     try {
+        // Validate and format dates - try multiple formats
+        $check_in_date = DateTime::createFromFormat('Y-m-d', $check_in);
+        $check_out_date = DateTime::createFromFormat('Y-m-d', $check_out);
+        
+        // If the standard format doesn't work, try other common formats
+        if (!$check_in_date) {
+            // Try m/d/Y format (common US format)
+            $check_in_date = DateTime::createFromFormat('m/d/Y', $check_in);
+            
+            // Try other possible formats if needed
+            if (!$check_in_date) {
+                $check_in_date = DateTime::createFromFormat('d/m/Y', $check_in);
+            }
+        }
+        
+        if (!$check_out_date) {
+            // Try m/d/Y format (common US format)
+            $check_out_date = DateTime::createFromFormat('m/d/Y', $check_out);
+            
+            // Try other possible formats if needed
+            if (!$check_out_date) {
+                $check_out_date = DateTime::createFromFormat('d/m/Y', $check_out);
+            }
+        }
+        
+        if (!$check_in_date || !$check_out_date) {
+            return ['success' => false, 'message' => 'Invalid date format. Please use a valid date.'];
+        }
+        
+        // Validate that check-out is after check-in
+        if ($check_in_date >= $check_out_date) {
+            return ['success' => false, 'message' => 'Check-out date must be after check-in date.'];
+        }
+        
+        // Format dates as strings in the correct format for database storage
+        $check_in = $check_in_date->format('Y-m-d');
+        $check_out = $check_out_date->format('Y-m-d');
         // Check if user exists, if not create new user
         $stmt = $pdo->prepare("SELECT id FROM users WHERE email = ?");
         $stmt->execute([$email]);
@@ -122,8 +159,13 @@ function sendConfirmationEmail($email, $first_name, $last_name, $booking_id, $ro
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
     $headers .= "From: River side Cottage <noreply@riversidecottage.com>" . "\r\n";
     
-    // Send email
-    mail($to, $subject, $message, $headers);
+    // Send email (suppress warnings in case mail server is not configured)
+    $mail_result = @mail($to, $subject, $message, $headers);
+    
+    // Optionally log the result for debugging (only in development)
+    if (!$mail_result) {
+        error_log("Failed to send confirmation email to: $to");
+    }
 }
 
 function getAvailableRooms($check_in, $check_out) {

@@ -58,16 +58,13 @@ hotel1/
 ## 🎨 Screenshots
 
 ### Homepage
-![Homepage](images/bg_2.jpg)
+![Homepage](![alt text](image.png))
 
 ### Room Selection
-![Room Selection](images/room-1.jpg)
+![Room Selection](![alt text](image-1.png))
 
 ### Booking Form
-![Booking Form](images/bg_3.jpg)
-
-### Admin Dashboard
-![Admin Dashboard](images/bg_4.jpg)
+![Booking Form](![alt text](image-2.png))
 
 ## 🔧 Installation
 

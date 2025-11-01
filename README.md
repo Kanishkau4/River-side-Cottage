@@ -1,6 +1,6 @@
 # River side Cottage - Luxury Hotel Booking System
 
-![River side Cottage Banner](images/logo.png)
+![River side Cottage Banner](images/screenshot.jpeg)
 
 A complete hotel booking website template built with HTML, CSS, JavaScript, PHP, and MySQL. This project provides a fully functional hotel reservation system with an attractive frontend and a secure admin panel.
 
@@ -55,17 +55,6 @@ hotel1/
 └── db_schema.sql          # Database schema
 ```
 
-## 🎨 Screenshots
-
-### Homepage
-![Homepage](![alt text](image.png))
-
-### Room Selection
-![Room Selection](![alt text](image-1.png))
-
-### Booking Form
-![Booking Form](![alt text](image-2.png))
-
 ## 🔧 Installation
 
 1. **Clone the repository**
@@ -88,17 +77,6 @@ hotel1/
      - Username: `admin`
      - Password: `*****`
 
-##  rooms
-
-### Deluxe River View Suite
-- **Price**: $150.00 per night
-- **Features**: King bed, Private balcony, River view, Mini bar, WiFi, TV, Air conditioning
-- ![Deluxe Suite](images/room-1.jpg)
-
-### Garden View Room
-- **Price**: $100.00 per night
-- **Features**: Queen bed, Garden view, WiFi, TV, Air conditioning, Mini fridge
-- ![Garden Room](images/room-2.jpg)
 
 ## 🔐 Admin Panel
 

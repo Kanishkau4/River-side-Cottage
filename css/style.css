@@ -8320,7 +8320,9 @@ h1, h2, h3, h4, h5,
 
 .hero-wrap {
   width: 100%;
-  height: 750px;
+  height: 100vh;
+  min-height: 600px;
+  max-height: 1080px;
   position: relative; }
   .hero-wrap .overlay {
     position: absolute;
@@ -8333,7 +8335,9 @@ h1, h2, h3, h4, h5,
     background: #2f89fc; }
   .hero-wrap .slider-text {
     color: #fff;
-    height: 750px; }
+    height: 100vh;
+  min-height: 600px;
+  max-height: 1080px; }
     .hero-wrap .slider-text .breadcrumbs {
       text-transform: uppercase;
       font-size: 13px;
@@ -8348,7 +8352,7 @@ h1, h2, h3, h4, h5,
     .hero-wrap .slider-text .bread {
       font-weight: 700;
       color: #fff;
-      font-size: 60px;
+      font-size: clamp(36px, 5vw, 70px);
       font-family: "Nunito Sans", Arial, sans-serif; }
     .hero-wrap .slider-text .btn-primary {
       border: 1px solid rgba(255, 255, 255, 0.4);
@@ -8427,13 +8431,17 @@ h1, h2, h3, h4, h5,
     right: -25px; }
   .owl-carousel.home-slider {
     position: relative;
-    height: 800px;
+    height: 100vh;
+    min-height: 600px;
+    max-height: 1080px;
     z-index: 0; }
     .owl-carousel.home-slider .slider-item {
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center center;
-      height: 800px;
+      height: 100vh;
+      min-height: 600px;
+      max-height: 1080px;
       position: relative;
       z-index: 0; }
       @media (max-width: 1199.98px) {
@@ -8448,13 +8456,15 @@ h1, h2, h3, h4, h5,
         background: #2f89fc;
         opacity: .6; }
       .owl-carousel.home-slider .slider-item .slider-text {
-        height: 800px;
+        height: 100vh;
+      min-height: 600px;
+      max-height: 1080px;
         position: relative; }
         .owl-carousel.home-slider .slider-item .slider-text .text {
           z-index: 0;
           color: rgba(255, 255, 255, 0.9); }
         .owl-carousel.home-slider .slider-item .slider-text h1 {
-          font-size: 6vw;
+          font-size: clamp(36px, 6vw, 80px);
           font-weight: 700;
           color: #fff;
           line-height: 1; }
@@ -8547,7 +8557,9 @@ h1, h2, h3, h4, h5,
   touch-action: pan-y; }
 
 .hero {
-  height: 800px;
+  height: 100vh;
+  min-height: 600px;
+  max-height: 1080px;
   position: relative;
   z-index: 0; }
   .hero .container-wrap {

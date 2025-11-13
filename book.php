@@ -184,9 +184,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                   <div class="alert alert-success animated fadeInUp" role="alert">
                     <h4 class="alert-heading">Booking Successful!</h4>
                     <p>Your booking has been confirmed. Booking ID: <?php echo $booking_id; ?></p>
-                    <p>Total Price: $<?php echo number_format($total_price, 2); ?></p>
+                    <p>Total Price: Rs <?php echo number_format($total_price, 2); ?></p>
                     <hr>
-                    <p class="mb-0">We've sent a confirmation email to <?php echo htmlspecialchars($email); ?> with all the details.</p>
+                    <p class="mb-0">For more information, call us at 0771313951, 0717999566, or 0762831769.</p>
                   </div>
                 <?php elseif (isset($booking_error)): ?>
                   <div class="alert alert-danger animated fadeInUp" role="alert">
@@ -220,7 +220,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                       // Get all room types
                       $room_types = getAllRoomTypes();
                       foreach ($room_types as $type): ?>
-                        <option value="<?php echo $type['id']; ?>" <?php echo ($room_type_id == $type['id']) ? 'selected' : ''; ?>><?php echo htmlspecialchars($type['name']); ?> - $<?php echo number_format($type['price'], 2); ?>/night</option>
+                        <option value="<?php echo $type['id']; ?>" <?php echo ($room_type_id == $type['id']) ? 'selected' : ''; ?>><?php echo htmlspecialchars($type['name']); ?> - Rs <?php echo number_format($type['price'], 2); ?>/night</option>
                       <?php endforeach; ?>
                     </select>
                   </div>
@@ -307,7 +307,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             	<div class="block-23 mb-3">
 	              <ul>
 	                <li><span class="icon icon-map-marker"></span><span class="text">Poramadilla, Pelwatta</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">0771313951 WhatsApp, 0771313951 normal, 0717999566 normal</span></a></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">0771313951 WhatsApp, 0771313951 normal, 0717999566 normal, 0762831769</span></a></li>
 	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@riversidecottage.com</span></a></li>
 	              </ul>
 	            </div>

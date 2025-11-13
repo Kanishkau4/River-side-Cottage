@@ -138,7 +138,7 @@ function sendConfirmationEmail($email, $first_name, $last_name, $booking_id, $ro
             </tr>
             <tr>
                 <td><strong>Total Price:</strong></td>
-                <td>$$total_price</td>
+                <td>Rs $total_price</td>
             </tr>
         </table>";
         
@@ -148,6 +148,7 @@ function sendConfirmationEmail($email, $first_name, $last_name, $booking_id, $ro
         
     $message .= "
         <p>We look forward to welcoming you to River side Cottage!</p>
+        <p>For more information, please call us at 0771313951, 0717999566, or 0762831769.</p>
         <p>Best regards,<br/>
         The River side Cottage Team</p>
     </body>

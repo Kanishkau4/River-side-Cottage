@@ -194,7 +194,7 @@ if (isset($_GET['logout'])) {
                                         <td><?php echo htmlspecialchars($booking['check_in_date']); ?></td>
                                         <td><?php echo htmlspecialchars($booking['check_out_date']); ?></td>
                                         <td><?php echo htmlspecialchars($booking['guests']); ?></td>
-                                        <td>$<?php echo number_format($booking['total_price'], 2); ?></td>
+                                        <td>Rs <?php echo number_format($booking['total_price'], 2); ?></td>
                                         <td>
                                             <span class="status-badge status-<?php echo htmlspecialchars($booking['status']); ?>">
                                                 <?php echo ucfirst(htmlspecialchars($booking['status'])); ?>

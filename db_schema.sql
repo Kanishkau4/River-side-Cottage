@@ -62,8 +62,8 @@ CREATE TABLE IF NOT EXISTS bookings (
 
 -- Insert sample room types (2 rooms as specified)
 INSERT INTO room_types (name, description, price, capacity, amenities, image_url) VALUES
-('Deluxe River View Suite', 'Experience stunning views of the river from your private balcony. This spacious suite includes a king-size bed, luxury bathroom, and all modern amenities.', 150.00, 2, 'King bed, Private balcony, River view, Mini bar, WiFi, TV, Air conditioning', 'images/room-1.jpg'),
-('Garden View Room', 'Relax in our comfortable garden view room with beautiful views of our tropical gardens. Perfect for couples or solo travelers.', 100.00, 2, 'Queen bed, Garden view, WiFi, TV, Air conditioning, Mini fridge', 'images/room-2.jpg');
+('Deluxe River View Suite', 'Experience stunning views of the river from your private balcony. This spacious suite includes a king-size bed, luxury bathroom, and all modern amenities.', 5000.00, 2, 'King bed, Private balcony, River view, Mini bar, WiFi, TV, Air conditioning', 'images/room-1.jpg'),
+('Garden View Room', 'Relax in our comfortable garden view room with beautiful views of our tropical gardens. Perfect for couples or solo travelers.', 3000.00, 2, 'Queen bed, Garden view, WiFi, TV, Air conditioning, Mini fridge', 'images/room-2.jpg');
 
 -- Insert sample room images
 INSERT INTO room_images (room_type_id, image_url, caption) VALUES
